@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { Artist } from '../../shared/models/artist';
-import { ArtistService } from './artist.service';
+import { ArtistService } from '../../shared/services/artist.service';
 
 @Component({
   selector: 'app-artist',
