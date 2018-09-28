@@ -11,6 +11,10 @@
     "postinstall": "npm run build",
     "heroku-prebuild": "npm install --dev"
   },
+  "engines": {
+    "node": "10.9.0",
+    "npm": "6.4.0"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~6.1.8",
