@@ -1,0 +1,39 @@
+<div class="bars">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<div class="container px-5">
+    <div class="row mb-2">
+        <div class="col">
+            <h1 class="app-title text-center text-primary font-weight-bolder mb-0">iMusic</h1>
+            <span class="d-block text-center text-primary font-weight-bold">The best music-related search app in the
+                freaking
+                world</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <input #search id="search" type="text" class="form-control" placeholder="Search for an artist"
+                [ngbTypeahead]="onSearch" [resultTemplate]="resultTemplate" [resultFormatter]="resultFormatter"
+                (selectItem)="onSelect($event)">
+        </div>
+    </div>
+</div>
+
+<ng-template #resultTemplate let-r="result" let-t="term">
+    <div class="text-truncate" [style.width.px]="search.offsetWidth - 48">
+        <ngb-highlight [result]="r.artistName" [term]="t"></ngb-highlight>
+    </div>
+</ng-template>

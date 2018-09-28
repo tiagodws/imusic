@@ -1,0 +1,24 @@
+<div class="d-flex">
+
+  <div class="py-2 pr-2">
+    <div class="thumbnail-container rounded">
+
+      <img *ngIf="track.thumbnail" [src]="track.thumbnail" class="rounded">
+
+      <div *ngIf="!track.thumbnail" class="text-secondary border w-100 h-100 rounded d-flex justify-content-center align-items-center">
+        <i class="fas fa-music" aria-hidden="true"></i>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="d-flex flex-grow-1 py-2 justify-content-between align-items-center border-top">
+    <div class="d-flex flex-column">
+      <div>{{track.name}}</div>
+      <small class="text-secondary font-weight-bold">{{track.artistName}}</small>
+    </div>
+
+    <small class="pl-2 align-middle text-secondary font-weight-bold">{{track.millis | date: 'mm:ss'}}</small>
+  </div>
+
+</div>

@@ -1,0 +1,70 @@
+<app-hero [imageSource]="artist.heroImage"></app-hero>
+
+<div class="container mt-4">
+
+  <nav class="row mb-3">
+    <div class="col">
+      <a routerLink="/home" class="text-primary"><i class="mr-2 fas fa-arrow-left" aria-hidden="true"></i>Back</a>
+    </div>
+  </nav>
+
+  <div class="row mb-2">
+    <div class="col-12">
+      <h1 class="font-weight-bolder">{{artist.name}}</h1>
+    </div>
+
+    <div class="col-12">
+      <a [href]="artist.url" target="_blank" class="btn btn-outline-primary">View on Apple Music<i class="ml-2 fas fa-sm fa-external-link-alt"
+          aria-hidden="true"></i></a>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+
+    <div class="col-md-8 mb-3 mb-md-0">
+      <div *ngIf="artist.bio" [@expandBio]="expandedBio">{{artist.bio}}</div>
+      <div *ngIf="!artist.bio" class="font-italic text-muted">Biography not available</div>
+
+      <div class="btn btn-link p-0" (click)="expandedBio = !expandedBio" aria-hidden="true">
+
+        <small *ngIf="!expandedBio && artist.bio?.length > maxBioLength" class="text-primary">Show more<i class="ml-2 fas fa-sm fa-arrow-alt-circle-down"
+            aria-hidden="true"></i></small>
+
+        <small *ngIf="expandedBio" class="text-primary">Show less<i class="ml-2 fas fa-sm fa-arrow-alt-circle-up"
+            aria-hidden="true"></i></small>
+
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="mb-2 pt-2 border-top">
+        <small class="d-block text-uppercase text-secondary font-weight-bold">Primary Genre</small>
+        <span>{{artist.genre}}</span>
+      </div>
+
+      <div *ngIf="artist.tags?.length" class="mb-2 pt-2 border-top">
+        <small class="d-block text-uppercase text-secondary font-weight-bold">Tags</small>
+        <span class="badge badge-secondary mr-1" *ngFor="let tag of artist.tags">{{tag}}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-12 mb-5" *ngFor="let album of artist.albums">
+      <app-album [album]="album"></app-album>
+    </div>
+  </div>
+
+  <div class="row mb-5" *ngIf="artist.relatedArtists?.length">
+    <div class="col-12">
+      <h5 class="font-weight-bolder border-top pt-3">Featured Artists</h5>
+    </div>
+
+    <div class="col-12">
+      <app-featured-artist *ngFor="let related of artist.relatedArtists" [artist]="related"></app-featured-artist>
+    </div>
+  </div>
+
+</div>

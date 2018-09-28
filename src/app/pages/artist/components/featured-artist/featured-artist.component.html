@@ -1,0 +1,13 @@
+<div [@loadTransition] class="p-3 d-inline-flex flex-column justify-content-center align-items-center">
+  <div class="thumbnail-container rounded-circle mb-2">
+
+    <img *ngIf="artist.thumbnail" [src]="artist.thumbnail" class="rounded">
+
+    <div *ngIf="!artist.thumbnail" class="text-secondary text-uppercase border w-100 h-100 rounded d-flex justify-content-center align-items-center">
+      {{artist.name}}
+    </div>
+
+  </div>
+
+  <span class="text-weight-bold">{{artist.name}}</span>
+</div>

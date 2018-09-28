@@ -1,0 +1,22 @@
+<div class="row" [@loadTransition]>
+  <div class="col-6 col-sm-4">
+    <div class="thumbnail-container rounded">
+
+      <img *ngIf="album.thumbnail" [src]="album.thumbnail">
+
+      <div *ngIf="!album.thumbnail" class="text-secondary text-uppercase border w-100 h-100 rounded d-flex justify-content-center align-items-center">
+        {{album.name}}
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-6 col-sm-8">
+    <h4 class="font-weight-bolder">{{album.name}}</h4>
+
+    <a [href]="album.url" target="_blank" class="btn btn-outline-primary mt-2 mb-4">Listen on Apple Music<i class="ml-2 fas fa-sm fa-external-link-alt"
+        aria-hidden="true"></i></a>
+
+    <app-track *ngFor="let track of album.tracks" [track]="track"></app-track>
+  </div>
+</div>

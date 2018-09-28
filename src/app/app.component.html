@@ -1,0 +1,11 @@
+<div [@loadTransition]>
+  <main [@routeTransition]="animationState">
+    <router-outlet (activate)="onActivate()"></router-outlet>
+  </main>
+
+  <footer class="text-center text-muted px-2 pt-2 fixed-bottom">
+    <small class="font-weight-bolder">Made with <i class="fas fa-coffee text-primary" aria-label="coffee"></i> by <a
+        href="http://github.com/tiagodws">Tiago
+        Dionesto</a></small>
+  </footer>
+</div>

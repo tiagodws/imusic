@@ -1,0 +1,26 @@
+$theme-colors: (
+  'primary': #dd2256,
+  'secondary': #8e8e93,
+);
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+small {
+  font-size: 9pt;
+}
+
+.font-weight-bolder {
+  font-weight: 900;
+}
+
+router-outlet ~ * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

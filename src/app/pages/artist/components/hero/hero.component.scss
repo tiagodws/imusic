@@ -1,0 +1,23 @@
+.outer-container {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+  position: relative;
+  height: 40vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+img {
+  animation: kenburns-bottom 60s infinite alternate both;
+  width: 100%;
+}
+
+@keyframes kenburns-bottom {
+  0% {
+    transform: scale(1) translateY(0);
+    transform-origin: 50% 85%;
+  }
+  100% {
+    transform: scale(1.25) translateY(15px);
+    transform-origin: bottom;
+  }
+}
