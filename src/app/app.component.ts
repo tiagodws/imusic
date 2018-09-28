@@ -17,7 +17,6 @@ import { fadeIn, fade } from './shared/animations/animations';
   ],
 })
 export class AppComponent {
-  public appLoaded = false;
   public animationState: number;
 
   constructor(private route: ActivatedRoute) {}
