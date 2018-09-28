@@ -2,7 +2,7 @@
 
 Projeto de site para consulta de informações a respeito de artistas.
 
-Demo: http://dashboard.heroku.com/apps/tiagodws-imusic
+Demo: http://tiagodws-imusic.herokuapp.com/
 
 ## Ambiente de desenvolvimento
 
