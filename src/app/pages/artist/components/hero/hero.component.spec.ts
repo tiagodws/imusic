@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeroComponent } from './hero.component';
@@ -8,9 +9,9 @@ describe('heroComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroComponent ]
-    })
-    .compileComponents();
+      imports: [CommonModule],
+      declarations: [HeroComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
