@@ -37,6 +37,6 @@
 
 <ng-template #resultTemplate let-r="result" let-t="term">
     <div class="text-truncate" [style.width.px]="search.offsetWidth - 48">
-        <ngb-highlight [result]="r.artistName" [term]="t"></ngb-highlight>
+        <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
     </div>
 </ng-template>
