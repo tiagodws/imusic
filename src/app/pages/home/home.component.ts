@@ -13,9 +13,9 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit, OnDestroy {
   @ViewChild('search')
   public search: ElementRef;
-
+  public searching = false;
+  
   private unsubscribe$ = new Subject();
-  private searching = false;
 
   constructor(private service: HomeService, private router: Router) {
     this.onSearch = this.onSearch.bind(this);
