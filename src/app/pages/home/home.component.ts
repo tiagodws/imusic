@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Observable, Subject, of } from 'rxjs';
 import { debounceTime, mergeMap, tap } from 'rxjs/operators';
 
-import { HomeService } from './home.service';
+import { ArtistService } from '../../shared/services/artist.service';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +14,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   @ViewChild('search')
   public search: ElementRef;
   public searching = false;
-  
+
   private unsubscribe$ = new Subject();
 
-  constructor(private service: HomeService, private router: Router) {
+  constructor(private service: ArtistService, private router: Router) {
     this.onSearch = this.onSearch.bind(this);
   }
 
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     return search$.pipe(
       debounceTime(400),
       tap(() => (this.searching = true)),
-      mergeMap(term => (term.length > 2 ? this.service.getHomeData(term) : of([]))),
+      mergeMap(term => (term.length > 2 ? this.service.listArtists(term) : of([]))),
       tap(() => (this.searching = false))
     );
   }
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   public onSelect(event: any) {
     event.preventDefault();
     this.search.nativeElement.value = '';
-    this.router.navigate(['/artist', event.item.artistId]);
+    this.router.navigate(['/artist', event.item.id]);
   }
 
   public ngOnDestroy() {
