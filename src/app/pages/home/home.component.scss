@@ -25,6 +25,20 @@
   animation: sound 400ms ease infinite alternate;
 }
 
+.search-container {
+  position: relative;
+}
+
+.searching-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 25px;
+  height: 100%;
+}
+
 @keyframes sound {
   0% {
     opacity: 0.2;
