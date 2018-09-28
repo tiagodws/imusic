@@ -10,5 +10,5 @@ export interface Artist {
   albums?: Album[];
   heroImage?: string;
   thumbnail?: string;
-  relatedArtists?: Partial<Artist>;
+  relatedArtists?: Partial<Artist>[];
 }
