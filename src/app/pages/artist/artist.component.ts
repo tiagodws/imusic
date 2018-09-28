@@ -1,9 +1,11 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+
+import { Artist } from '../../shared/models/artist';
 import { ArtistService } from './artist.service';
-import { transition, state, trigger, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-artist',
@@ -18,7 +20,7 @@ import { transition, state, trigger, style, animate } from '@angular/animations'
   ],
 })
 export class ArtistComponent implements OnInit, OnDestroy {
-  public artist: any;
+  public artist: Artist;
   public expandedBio = false;
   public maxBioLength = 500;
   private unsubscribe$ = new Subject();
