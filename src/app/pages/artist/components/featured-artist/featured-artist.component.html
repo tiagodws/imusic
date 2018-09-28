@@ -3,7 +3,7 @@
 
     <img *ngIf="artist.thumbnail" [src]="artist.thumbnail" class="rounded">
 
-    <div *ngIf="!artist.thumbnail" class="text-secondary text-uppercase border w-100 h-100 rounded-circle d-flex justify-content-center align-items-center">
+    <div *ngIf="!artist.thumbnail" class="text-secondary text-uppercase text-truncate border w-100 h-100 rounded-circle d-flex justify-content-center align-items-center">
       {{artist.name}}
     </div>
 
