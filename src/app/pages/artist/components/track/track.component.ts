@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+import { Track } from '../../../../shared/models/track';
+
 @Component({
   selector: 'app-track',
   templateUrl: './track.component.html',
@@ -7,5 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class TrackComponent {
   @Input()
-  public track: any;
+  public track: Track;
 }
