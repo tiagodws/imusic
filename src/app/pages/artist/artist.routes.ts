@@ -2,7 +2,7 @@ import { Injectable, NgModule } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterModule, Routes } from '@angular/router';
 
 import { ArtistComponent } from './artist.component';
-import { ArtistService } from './artist.service';
+import { ArtistService } from '../../shared/services/artist.service';
 
 @Injectable()
 export class ArtistResolver implements Resolve<any> {
