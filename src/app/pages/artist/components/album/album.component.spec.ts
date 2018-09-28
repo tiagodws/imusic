@@ -1,5 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import { TrackComponent } from '../track/track.component';
 import { AlbumComponent } from './album.component';
 
 describe('AlbumComponent', () => {
@@ -8,14 +11,23 @@ describe('AlbumComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlbumComponent ]
-    })
-    .compileComponents();
+      imports: [CommonModule, NoopAnimationsModule],
+      declarations: [AlbumComponent, TrackComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AlbumComponent);
     component = fixture.componentInstance;
+
+    component.album = {
+      id: 1,
+      name: 'Test',
+      url: '',
+      artistName: 'Test',
+      tracks: [],
+    };
+
     fixture.detectChanges();
   });
 
