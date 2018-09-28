@@ -52,6 +52,10 @@
   </div>
 
   <div class="row">
+    <div *ngIf="!artist.albums" class="d-flex justify-content-center align-items-center w-100 mb-5">
+      <i class="fas fa-spin text-primary fa-5x fa-circle-notch"></i>
+    </div>
+
     <div class="col-12 mb-5" *ngFor="let album of artist.albums">
       <app-album [album]="album"></app-album>
     </div>
