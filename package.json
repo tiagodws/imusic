@@ -8,8 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "npm run build",
-    "heroku-prebuild": "npm install --dev"
+    "postinstall": "npm run build"
   },
   "engines": {
     "node": "10.9.0",
