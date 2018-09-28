@@ -4,7 +4,7 @@
 
       <img *ngIf="album.thumbnail" [src]="album.thumbnail">
 
-      <div *ngIf="!album.thumbnail" class="text-secondary text-uppercase border w-100 h-100 rounded d-flex justify-content-center align-items-center">
+      <div *ngIf="!album.thumbnail" class="text-secondary text-uppercase text-truncate border w-100 h-100 rounded d-flex justify-content-center align-items-center">
         {{album.name}}
       </div>
 
