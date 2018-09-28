@@ -1,5 +1,5 @@
 <div class="row" [@loadTransition]>
-  <div class="col-6 col-sm-4">
+  <div class="col-6 col-sm-3">
     <div class="thumbnail-container rounded">
 
       <img *ngIf="album.thumbnail" [src]="album.thumbnail">
@@ -9,10 +9,19 @@
       </div>
 
     </div>
+
+    <small *ngIf="album.tracks" class="text-secondary font-weight-bold mt-2 d-none d-sm-block">{{album.tracks.length}}
+      song{{album.tracks.length !== 1 ? "s" : ""}}</small>
   </div>
 
-  <div class="col-6 col-sm-8">
-    <h4 class="font-weight-bolder">{{album.name}}</h4>
+  <div class="col-6	d-block d-sm-none">
+    <h4 class="font-weight-bolder mb-0">{{album.name}}</h4>
+    <small *ngIf="album.tracks" class="text-secondary font-weight-bold mt-2">{{album.tracks.length}}
+      song{{album.tracks.length !== 1 ? "s" : ""}}</small>
+  </div>
+
+  <div class="col-12 col-sm-8">
+    <h4 class="font-weight-bolder d-none d-sm-block">{{album.name}}</h4>
 
     <a [href]="album.url" target="_blank" class="btn btn-outline-primary mt-2 mb-4">Listen on Apple Music<i class="ml-2 fas fa-sm fa-external-link-alt"
         aria-hidden="true"></i></a>
